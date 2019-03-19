@@ -3,6 +3,9 @@
         ServerName <%= @servername %>
         ServerAlias www.<%= @servername %>
         DocumentRoot <%= @document_root %>/public_html
+ 	SSLEngine on
+	SSLCertificateFile /etc/httpd/server.crt
+	SSLCertificateKeyFile /etc/httpd/pk.pem
         ErrorLog <%= @document_root %>/logs/error.log
         <Directory <%= @document_root %>/public_html>
                 Require all granted
